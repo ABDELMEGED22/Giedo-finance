@@ -1,4 +1,9 @@
-FROM mcr.microsoft.com/devcontainers/base:${templateOption:imageVariant}
+ARG imageVariant="latest"
+ARG greeting="Welcome to Giedo-finance!"
+FROM mcr.microsoft.com/devcontainers/base:${imageVariant}
 
-RUN mkdir -p /usr/local/etc \
-    && echo "${templateOption:greeting}" > /usr/local/etc/greeting.txt
+WORKDIR /usr/local/etc
+
+RUN echo "${greeting}" > greeting.txt
+
+LABEL greeting="${greeting}"
