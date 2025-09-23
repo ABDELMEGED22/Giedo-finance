@@ -1,16 +1,1 @@
-// More info: https://containers.dev/implementors/json_reference/
-{
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"mads-hartmann.bash-ide-vscode",
-				"dbaeumer.vscode-eslint"
-			]
-		}
-	},
-	"postCreateCommand": "npm install -g @devcontainers/cli"
-}
+{"name": "Giedo Finance Dev", "build": {"dockerfile": "src/hello/.devcontainer/Dockerfile", "context": ".", "args": {"imageVariant": "latest", "greeting": "مرحبا بك في تطبيق جيدو!"}}, "workspaceFolder": "/workspaces/Giedo-finance", "settings": {"terminal.integrated.shell.linux": "/bin/bash"}, "extensions": [], "forwardPorts": [], "postCreateCommand": "echo 'تم بناء الحاوية بنجاح!' || true"}
